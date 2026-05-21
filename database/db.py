@@ -41,7 +41,7 @@ def init_db():
 
 def get_user_by_email(email):
     conn = get_db()
-    user = conn.execute("SELECT id FROM users WHERE email = ?", (email,)).fetchone()
+    user = conn.execute("SELECT * FROM users WHERE email = ?", (email,)).fetchone()
     conn.close()
     return user
 
